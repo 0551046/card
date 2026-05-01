@@ -1,12 +1,67 @@
 body{
   background-color: #F2E8D5;
   /*background-color: #FFF5E0;*/
-  display: flex;
+  /* display: flex;
   justify-content: center;
   align-items: center;
+  flex-direction: column; */
   color: #593B34;
+  font-family: "PingFang TC", "Microsoft JhengHei", sans-serif;
   min-height: 100vh;
   margin: 0;
+}
+
+.navbar{
+  background-color: #593B34; /* 深褐色背景 */
+  padding: 15px 50px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  position: sticky;
+  top: 0;
+  z-index: 1000;
+}
+
+.logo{
+  color: #FFF5E0;
+  font-size: 24px;
+  font-weight: bold;
+  letter-spacing: 2px;
+}
+
+.nav_links{
+  list-style: none;         /* 移除點點 */
+  display: flex;            /* 讓清單項目橫著排 */
+  gap: 30px;
+  margin: 0;
+}
+
+.nav_links a{
+  text-decoration: none;
+  color: #FFF5E0;
+  font-weight: bold;
+  font-size: 16px;
+  padding: 5px 0;
+  transition: all 0.3s ease;
+  position: relative;
+}
+
+.nav_links a.active{
+  color: #D4A373;
+}
+
+.nav_links a.active::after{
+  content: "";
+  position: absolute;
+  bottom: -2px;
+  left: 0;
+  width: 100%;
+  height: 2px;
+  background-color: #D4A373;
+}
+
+.nav_links a:hover{
+  color: #D4A373;
 }
 
 .container{
