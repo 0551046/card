@@ -1,3 +1,10 @@
+/* 基礎重置 */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
 body{
   background-color: #F2E8D5;
   /*background-color: #FFF5E0;*/
@@ -13,7 +20,9 @@ body{
 
 .navbar{
   background-color: #593B34; /* 深褐色背景 */
-  padding: 15px 50px;
+  height: 60px;
+  width: 100%;
+  padding: 0 50px;
   display: flex;
   justify-content: space-between;
   align-items: center;
@@ -33,7 +42,6 @@ body{
   list-style: none;         /* 移除點點 */
   display: flex;            /* 讓清單項目橫著排 */
   gap: 30px;
-  margin: 0;
 }
 
 .nav_links a{
@@ -46,7 +54,7 @@ body{
   position: relative;
 }
 
-.nav_links a.active{
+/* .nav_links a.active{
   color: #D4A373;
 }
 
@@ -58,11 +66,88 @@ body{
   width: 100%;
   height: 2px;
   background-color: #D4A373;
-}
+} */
 
 .nav_links a:hover{
   color: #D4A373;
 }
+
+#menu_control{
+  display: none;
+}
+
+.menu_btn{
+  display: none;
+  cursor: pointer;
+  flex-direction: column;
+  gap: 5px;
+}
+
+.menu_btn span{
+  display: block;
+  width: 25px;
+  height: 3px;
+  background-color: #FFF5E0;
+  border-radius: 3px;
+  transition: 0.3s;
+}
+
+/* ------------------------------------------- */
+/* 6. 響應式設定 (Mobile) */
+/* ------------------------------------------- */
+@media (max-width: 768px) {
+  .navbar{
+    padding: 0, 20px;
+  }
+  
+  /* 顯示漢堡圖示 */
+  .menu_btn{
+    display: flex;
+  }
+
+  /* 把選單改成垂直抽屜式 */
+  .nav_links{
+    position: absolute;
+    top: 60px; /* 從導覽列下方開始 */
+    left: 0;
+    width: 100%;
+    background-color: #593B34;
+    flex-direction: column;
+    align-items: center;
+    gap: 0;
+
+    /* 預設高度為 0 且隱藏溢出內容 */
+    max-height: 0;
+    overflow: hidden;
+    transition: max-height 0.4s ease-out;
+  }
+
+  .nav_links li{
+    width: 100%;
+    text-align: center;
+  }
+
+  .nav_links a{
+    display: block;
+    padding: 20px 0;
+    border-bottom: 1px solid #FFF5E020;
+  }
+
+  #menu_control:checked ~ .nav_links {
+    max-height: 300px; /* 設定一個足夠撐開內容的高度 */
+  }
+
+  #menu_control:checked ~ .menu_btn span:nth-child(1) {
+    transform: translateY(8px) rotate(45deg);
+  }
+  #menu_control:checked ~ .menu_btn span:nth-child(2) {
+    opacity: 0;
+  }
+  #menu_control:checked ~ .menu_btn span:nth-child(3) {
+    transform: translateY(-8px) rotate(-45deg);
+  }
+}
+
 
 .container{
   display: flex;
