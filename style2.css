@@ -1,0 +1,39 @@
+/* 
+    背景
+    #F2E8D5
+
+    字
+    #593B34
+
+    navbar背景
+    #593B34
+
+    navbar字
+    #FFF5E0
+
+    nav_link字hover
+    #D4A373
+
+    漢堡span背景
+    #FFF5E0
+
+    漢堡nav_link a底線
+    #FFF5E020
+
+    card背景
+    #FFF5E0
+
+    card陰影
+    rgba(89, 59, 52, 0.1)
+*/
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    margin: 0;
+    
+}
